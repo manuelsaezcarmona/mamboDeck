@@ -7,7 +7,7 @@ describe('Given the Category Page', () => {
     describe('Then user is autenticated', () => {
       const initialState = {
         user: {
-          username: '123',
+          username: 'manu',
           recipes: []
         }
       };
