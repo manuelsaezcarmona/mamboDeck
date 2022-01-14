@@ -23,17 +23,14 @@ $logofont-secondpart: 'Bebas Neue', Impact, Haettenschweiler, 'Arial Narrow Bold
   padding: 0;
 }
 
+html {
+  width: 100vw;
+}
 body {
    -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: $principal-font;
-  min-height: 100vh;
 
-}
-.App {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .principal{

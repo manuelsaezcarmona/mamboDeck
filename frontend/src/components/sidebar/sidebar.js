@@ -9,7 +9,7 @@ import { SidebarData } from './sidebar-data';
 import { SubMenu } from './submenu';
 
 const Nav = styled.div`
-  background: #15171c;
+  background: #edc953;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -56,12 +56,11 @@ export function Sidebar() {
         </NavIcon>
         <h1
           style={{
-            textAlign: 'center',
-            marginLeft: '200px',
-            color: 'green'
+            textAlign: 'left',
+            color: 'black'
           }}
         >
-          GeeksforGeeks
+          Menu
         </h1>
       </Nav>
       <SidebarNav sidebar={sidebar}>
