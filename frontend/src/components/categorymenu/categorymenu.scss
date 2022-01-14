@@ -4,6 +4,8 @@
   display: flex;
   justify-content: space-around ;
   list-style: none;
+  flex-wrap: wrap;
+  padding-inline-start: 0 !important;
 }
 
 .category-menu-nav__link{
