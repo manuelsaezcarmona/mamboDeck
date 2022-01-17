@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { MainMenu } from '../mainmenu/mainmenu';
+import { SideBar } from '../sidebar/sidebar';
 import { CategoryMenu } from '../categorymenu/categorymenu';
+
 import './header.scss';
 
 export function Header() {
@@ -13,7 +15,9 @@ export function Header() {
             <span className="logo-link__span logo-link__span--after">Deck</span>
           </Link>
         </p>
+        <SideBar />
         <MainMenu />
+
       </div>
       <div className="categorymenu-container">
         <CategoryMenu />

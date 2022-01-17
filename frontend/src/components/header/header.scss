@@ -1,26 +1,4 @@
 @import '../../App.scss';
 
-.header-container {
-  width: 100%;
-  height: 20vh;
-}
 
-.general-menu-container{
-  display: flex;
-  align-items: center;
-}
-.logo-link{
-  text-decoration: none;
-  color: $grey-search;
-}
-.logo-link__span{
-  font-size: 2rem;
-  font-weight: bolder;
-}
 
-.logo-link__span--before {
-  font-family: $logofont-firstpart;
-}
-.logo-link__span--after{
-   font-family: $logofont-secondpart;
-}
