@@ -15,8 +15,9 @@ export function Header() {
             <span className="logo-link__span logo-link__span--after">Deck</span>
           </Link>
         </p>
-        <MainMenu />
         <SideBar />
+        <MainMenu />
+
       </div>
       <div className="categorymenu-container">
         <CategoryMenu />
