@@ -1,76 +1,50 @@
-/* eslint-disable react/no-array-index-key */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react/function-component-definition */
 import React, { useState } from 'react';
-import styled from 'styled-components';
+
 import { Link } from 'react-router-dom';
+
+// ICONS
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import { IconContext } from 'react-icons/lib';
-import { SidebarData } from './sidebar-data';
-import { SubMenu } from './submenu';
 
-const Nav = styled.div`
-  background: #edc953;
-  height: 80px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-`;
+// Data Items
+import { SidebarDataGuest } from './sidebar-data';
 
-const NavIcon = styled(Link)`
-  margin-left: 2rem;
-  font-size: 2rem;
-  height: 80px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-`;
+// Styles
+import './sidebar.scss';
 
-const SidebarNav = styled.nav`
-  background: #15171c;
-  width: 250px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
-  transition: 350ms;
-  z-index: 10;
-`;
+export function SideBar() {
+  const [sidebar, setsidebar] = useState(false);
 
-const SidebarWrap = styled.div`
-  width: 100%;
-`;
-
-// eslint-disable-next-line react/function-component-definition
-export function Sidebar() {
-  const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
+  const showSidebar = () => setsidebar(!sidebar);
 
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <IconContext.Provider value={{ color: '#ffff' }}>
-      <Nav>
-        <NavIcon to="#">
+    <>
+      <div className="navbar">
+        <Link to="#" className="menu-bars">
           <FaIcons.FaBars onClick={showSidebar} />
-        </NavIcon>
-        <h1
-          style={{
-            textAlign: 'left',
-            color: 'black'
-          }}
-        >
-          Menu
-        </h1>
-      </Nav>
-      <SidebarNav sidebar={sidebar}>
-        <SidebarWrap>
-          <NavIcon to="#">
-            <AiIcons.AiOutlineClose onClick={showSidebar} />
-          </NavIcon>
-          {SidebarData.map((item, index) => <SubMenu item={item} key={index} />)}
-        </SidebarWrap>
-      </SidebarNav>
-    </IconContext.Provider>
+        </Link>
+      </div>
+      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+        <ul className="nav-menu-items" onClick={showSidebar}>
+          <li className="navbar-toggle">
+            <Link to="#" className="menu-bars">
+              <AiIcons.AiOutlineClose />
+            </Link>
+          </li>
+          {SidebarDataGuest.map((item, index) => (
+            <li key={item.cName && index} className={item.cName}>
+              <Link to={item.path} className={item.cName}>
+                {item.icon}
+                <span>{item.title}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </>
   );
 }

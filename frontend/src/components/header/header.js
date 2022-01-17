@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { MainMenu } from '../mainmenu/mainmenu';
+import { SideBar } from '../sidebar/sidebar';
 import { CategoryMenu } from '../categorymenu/categorymenu';
-import { Sidebar } from '../sidebar/sidebar';
+
 import './header.scss';
 
 export function Header() {
@@ -15,7 +16,7 @@ export function Header() {
           </Link>
         </p>
         <MainMenu />
-        <Sidebar />
+        <SideBar />
       </div>
       <div className="categorymenu-container">
         <CategoryMenu />

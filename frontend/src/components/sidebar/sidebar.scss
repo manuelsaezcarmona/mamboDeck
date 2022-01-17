@@ -1,0 +1,13 @@
+@import '../../App.scss';
+
+
+
+
+.nav-text {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 0 8px 16px;
+  list-style: none;
+  height: 60px;
+}
